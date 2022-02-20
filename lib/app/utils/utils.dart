@@ -60,6 +60,16 @@ class Utils {
     'Sun',
   ];
 
+  static String? requiredValidation(String? text) {
+    if (text != null) {
+      bool _isValid = text.trim() != '';
+      if (!_isValid) {
+        return 'This field is required';
+      }
+    }
+    return null;
+  }
+
   static String? emailValidation(String? text) {
     if (text != null) {
       bool _isValid = RegExp(
@@ -69,6 +79,7 @@ class Utils {
         return 'Enter a valid EmailAddress';
       }
     }
+    return null;
   }
 
   static String? passwordValidation(String? text) {
@@ -91,6 +102,7 @@ class Utils {
         return 'Password must have at least 8 characters';
       }
     }
+    return null;
   }
 
   static String? confirmPasswordValidation(String? text, String? password) {
@@ -116,11 +128,20 @@ class Utils {
         return 'Password must have at least 8 characters';
       }
     }
+    return null;
   }
 
-  /**======================
-   *?    Bool validation
-   *========================**/
+/* -------------------------------------------------------------------------- */
+/*                               Bool validation                              */
+/* -------------------------------------------------------------------------- */
+  static bool boolRequiredValidation(String? text) {
+    if (text != null) {
+      bool _isValid = text.trim() != '';
+      return _isValid;
+    }
+    return false;
+  }
+
   static bool boolEmailValidation(String? text) {
     if (text != null) {
       bool _isValid = RegExp(

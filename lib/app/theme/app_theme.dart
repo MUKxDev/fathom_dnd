@@ -7,13 +7,16 @@ class AppTheme {
     brightness: Brightness.dark,
     colorSchemeSeed: AppColors.purple,
     useMaterial3: true,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: AppColors.gray,
+    ),
 
     textSelectionTheme: const TextSelectionThemeData(
       selectionColor: AppColors.purple,
     ),
     // colorScheme: AppColors.colorScheme,
     textTheme: AppTextTheme.textTheme,
-    // scaffoldBackgroundColor: AppColors.colorScheme.background,
+    scaffoldBackgroundColor: AppColors.colorScheme.background,
     buttonTheme: ButtonThemeData(
       // colorScheme: AppColors.colorScheme,
       shape: RoundedRectangleBorder(

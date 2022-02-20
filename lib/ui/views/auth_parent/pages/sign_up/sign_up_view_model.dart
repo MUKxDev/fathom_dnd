@@ -5,7 +5,9 @@ import 'package:fathom_dnd/app/services/api/auth_service.dart';
 import 'package:fathom_dnd/app/services/app/router_service.dart';
 import 'package:fathom_dnd/app/utils/utils.dart';
 import 'package:flutter/material.dart';
-import 'package:stacked_firebase_auth/stacked_firebase_auth.dart';
+
+import '../../../../../app/theme/app_colors.dart';
+import '../../../../../app/theme/app_text_theme.dart';
 
 class SignUpViewModel extends CustomBaseViewModel {
 /* -------------------------------------------------------------------------- */
@@ -35,7 +37,11 @@ class SignUpViewModel extends CustomBaseViewModel {
           .then((value) {
         if (value.hasError) {
           SnackBar _errorSnackBar = SnackBar(
-            content: Text(value.errorMessage ?? ''),
+            content: Text(
+              value.errorMessage ?? '',
+              style: AppTextTheme.textTheme.caption,
+            ),
+            backgroundColor: AppColors.red,
             duration: const Duration(seconds: 4),
           );
           ScaffoldMessenger.of(context).showSnackBar(_errorSnackBar);

@@ -45,6 +45,26 @@ class DashboardView extends StatelessWidget {
                   style: AppTextTheme.textTheme.caption
                       ?.copyWith(color: AppColors.grayLight),
                 ),
+                Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: AppColors.gray,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        '${model.character?.basicInfo.name}',
+                        style: AppTextTheme.textTheme.displayMedium,
+                      ),
+                      Text(
+                        model.character.toString(),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

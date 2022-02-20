@@ -3,7 +3,7 @@ import 'package:fathom_dnd/app/theme/app_text_theme.dart';
 import 'package:fathom_dnd/app/utils/constants.dart';
 import 'package:fathom_dnd/app/utils/ui_helpers.dart';
 import 'package:fathom_dnd/app/utils/utils.dart';
-import 'package:fathom_dnd/ui/widgets/dumb/dnd_textfield.dart';
+import 'package:fathom_dnd/ui/widgets/dumb/dnd_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
@@ -87,7 +87,7 @@ class LoginView extends StatelessWidget {
                           ),
                           verticalSpaceSmall(context),
                           TextButton(
-                            onPressed: () => model.forgetPassword(),
+                            onPressed: () => model.forgetPassword(context),
                             child: Text(
                               'Forgot Password?',
                               style: AppTextTheme.textTheme.button,
