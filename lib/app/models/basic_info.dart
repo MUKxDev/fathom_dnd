@@ -6,12 +6,14 @@ class BasicInfo {
   final String characterClass;
   final bool isAlive;
   final String? backStory;
+  final String? image;
   BasicInfo({
     required this.name,
     required this.race,
     required this.characterClass,
     required this.isAlive,
     this.backStory,
+    this.image,
   });
 
   BasicInfo copyWith({
@@ -20,6 +22,7 @@ class BasicInfo {
     String? characterClass,
     bool? isAlive,
     String? backStory,
+    String? image,
   }) {
     return BasicInfo(
       name: name ?? this.name,
@@ -27,6 +30,7 @@ class BasicInfo {
       characterClass: characterClass ?? this.characterClass,
       isAlive: isAlive ?? this.isAlive,
       backStory: backStory ?? this.backStory,
+      image: image ?? this.image,
     );
   }
 
@@ -37,6 +41,7 @@ class BasicInfo {
       'characterClass': characterClass,
       'isAlive': isAlive,
       'backStory': backStory,
+      'image': image,
     };
   }
 
@@ -47,6 +52,7 @@ class BasicInfo {
       characterClass: map['characterClass'] ?? '',
       isAlive: map['isAlive'] ?? false,
       backStory: map['backStory'],
+      image: map['image'],
     );
   }
 
@@ -57,7 +63,7 @@ class BasicInfo {
 
   @override
   String toString() {
-    return 'BasicInfo(name: $name, race: $race, characterClass: $characterClass, isAlive: $isAlive, backStory: $backStory)';
+    return 'BasicInfo(name: $name, race: $race, characterClass: $characterClass, isAlive: $isAlive, backStory: $backStory, image: $image)';
   }
 
   @override
@@ -69,7 +75,8 @@ class BasicInfo {
         other.race == race &&
         other.characterClass == characterClass &&
         other.isAlive == isAlive &&
-        other.backStory == backStory;
+        other.backStory == backStory &&
+        other.image == image;
   }
 
   @override
@@ -78,6 +85,7 @@ class BasicInfo {
         race.hashCode ^
         characterClass.hashCode ^
         isAlive.hashCode ^
-        backStory.hashCode;
+        backStory.hashCode ^
+        image.hashCode;
   }
 }

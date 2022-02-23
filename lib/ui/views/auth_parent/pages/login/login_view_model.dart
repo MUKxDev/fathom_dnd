@@ -16,8 +16,11 @@ class LoginViewModel extends CustomBaseViewModel {
   final RouterService _routerService = locator<RouterService>();
   final AuthService _authService = locator<AuthService>();
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passController = TextEditingController();
+  // TODO: remove the values in production
+  TextEditingController emailController =
+      TextEditingController(text: 'mukxdev@gmail.com');
+  TextEditingController passController =
+      TextEditingController(text: 'Muk12345');
 
   Future<void> init() async {}
 
